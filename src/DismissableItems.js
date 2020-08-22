@@ -76,7 +76,7 @@ const styles = (theme) => ({
     fontSize: '0.9em',
     color: props => { return props.innerColors.mediumContrast },
   },
-  cancleDismissDialogButton: {
+  cancelDismissDialogButton: {
     borderStyle: 'solid',
     cursor: 'pointer',
     fontWeight: '500',
@@ -316,9 +316,9 @@ class SelectDismissableItemss extends React.Component {
         <DialogActions>
           <div className={classes.dismissAllDialogMenu}>
             <button
-              id='cancleDismissAllDialogButton'
+              id='cancelDismissAllDialogButton'
               autoFocus
-              className={classes.cancleDismissAllDialogButton}
+              className={classes.cancelDismissAllDialogButton}
               onClick={this.closeDismissDialog} >
               Cancel
             </button>
