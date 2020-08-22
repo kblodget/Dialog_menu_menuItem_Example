@@ -46,6 +46,13 @@ class App extends React.Component {
   confirmUnsubscribe = () => {
     console.log("in confirmUnsubscribe ...");
     this.closeUnsubscribeDialog();
+    alert(
+      "you have unsubscribe/deleted from this subscription" +
+        " actionKey: " +
+        this.state.actionKey +
+        " unsubscribeDialogOpen " +
+        this.state.unsubscribeDialogOpen
+    );
   };
 
   /*
