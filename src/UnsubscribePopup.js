@@ -4,24 +4,24 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
-  notifierUnsubscribeDialogTitle: {
+  unsubscribeDialogTitle: {
     padding: "10px",
     textAlign: "center",
     color: "black",
     fontFamily: "Roboto",
     fontWeight: 500
   },
-  notifierUnsubscribeDialogName: {
+  unsubscribeDialogName: {
     fontWeight: 200,
     fontFamily: "Roboto"
   },
-  notifierUnsubscribeDialogMenu: {
+  unsubscribeDialogMenu: {
     display: "flex",
     justifyContent: "flex-end",
     padding: "10px",
     fontSize: "0.9em"
   },
-  notifierUnsubscribeButton: {
+  unsubscribeButton: {
     borderRadius: "2px",
     borderStyle: "solid",
     color: "#53586A",
@@ -33,7 +33,7 @@ const styles = {
       filter: "brightness(75%)"
     }
   },
-  notifierCancelButton: {
+  cancelButton: {
     backgroundColor: "white",
     "&:active": {
       filter: "brightness(75%)"
@@ -53,38 +53,39 @@ class UnsubscribePopup extends React.Component {
     return (
       <Dialog
         aria-modal={true}
-        aria-labelledby={classes.notifierUnsubscribeDialogTitle}
+        aria-labelledby={classes.unsubscribeDialogTitle}
         onBackdropClick={this.props.closeUnsubscribeDialog}
         open={this.props.unsubscribeDialogOpen}
       >
         <div
-          id="notifierUnsubscribeDialogTitle"
-          className={classes.notifierUnsubscribeDialogTitle}
+          id="unsubscribeDialogTitle"
+          className={classes.unsubscribeDialogTitle}
         >
           <span>
-            Are you sure you want to ${actionType} from this subscription:
+            Are you sure you want to {actionType} from this subscription:
           </span>
           <br />
-          <span className={classes.notifierUnsubscribeDialogName}>
+          <span className={classes.unsubscribeDialogName}>
             {this.props.selectedSubscriptionName}.
           </span>
           <br />
-          <span className={classes.notifierUnsubscribeDialogName}>
+          <span className={classes.unsubscribeDialogName}>
             Press tab or select the action you want to take.
           </span>
         </div>
-        <div className={classes.notifierUnsubscribeDialogMenu}>
+        <div className={classes.unsubscribeDialogMenu}>
           <button
-            id={`notifierCancelButton-${this.props.selectedSubscriptionId}`}
-            className={`${classes.notifierUnsubscribeButton} ${classes.notifierCancelButton}`}
+            id="cancelButton"
+            className={`${classes.unsubscribeButton} ${classes.cancelButton}`}
             aria-label={"Press the enter key to cancel this action."}
             onClick={this.props.closeUnsubscribeDialog}
+            autoFocus
           >
             Cancel
           </button>
           <button
-            id={`notifierUnsubscribeButton-${this.props.selectedSubscriptionId}`}
-            className={classes.notifierUnsubscribeButton}
+            id="unsubscribeButton"
+            className={classes.unsubscribeButton}
             size="small"
             onClick={this.props.confirmUnsubscribe}
             aria-label={`Press the enter key to ${actionType} from subscription ${this.props.selectedSubscriptionName}.`}
