@@ -8,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {ListComponent, listIncludes, notificationDuck} from '@enf/core'
 
 const styles = (theme) => ({
   selectDismissDiv: {
