@@ -21,7 +21,17 @@ const TestDialog = forwardRef((props, ref) => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  
+ // Following code is not used but I anted to save it as an example
+  const openUnsubscribeDialog = () => {
+    if (!this.state.open && this.state.actionKey) {
+      window.setTimeout(() => {
+        this.setState({unsubscribeDialogOpen: true})
+      }, 1000)
+    }
+  }
+    
+    
   return (
     <>
       <li onClick={handleClick} {...props}>
