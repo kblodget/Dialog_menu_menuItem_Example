@@ -318,7 +318,7 @@ class SelectDismissableItemss extends React.Component {
             <button
               id='cancelDismissAllDialogButton'
               autoFocus
-              className={classes.cancelDismissAllDialogButton}
+              className={classes.cancelDismissDialogButton}
               onClick={this.closeDismissDialog} >
               Cancel
             </button>
